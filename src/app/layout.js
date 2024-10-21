@@ -23,7 +23,26 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen">
+          {/* Header */}
+          <header className="bg-gray-900 text-white py-6 shadow-md sticky top-0 z-50">
+            <div className="container mx-auto flex justify-between items-center">
+              <h1 className="text-3xl font-bold">LoL Match History</h1>
+            </div>
+          </header>
+
+          {/* Main content area */}
+          <main className="flex-grow bg-gradient-to-r from-blue-900 to-blue-600 text-white p-12">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <footer className="bg-gray-900 text-white py-6 mt-auto">
+            <div className="container mx-auto text-center">
+              <p className="text-sm">LoL match history finder</p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
